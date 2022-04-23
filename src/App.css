@@ -4,4 +4,12 @@
 
 body {
   margin: 0;
+  background-color: #0B2434;
+}
+
+main{
+  width: 80%;
+  height: 80vh;
+  background-color: #FFFFFF;
+  margin: 10vh auto;
 }
