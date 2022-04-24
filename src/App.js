@@ -1,23 +1,26 @@
 import React from 'react'
+import { nanoid } from 'nanoid';
 import './App.css';
 import Die from './components/Die'
 
 function App() {
   
-  const [dies, setDies] = React.useState([{}])
-  React.useEffect(() => {
+  const [dies, setDies] = React.useState(setNewDies())
+  // React.useEffect(() => {
+    function setNewDies(){
     const newDies = [{}]
     for(let i=0;i<10;++i){
       const newDie =
       {
-          id: i+1, 
+          id: nanoid(), 
           value: Math.floor(Math.random()*5 + 1), 
           fixed: false
       }
       newDies[i]=newDie
     }
-    setDies(newDies)
-  }, [])
+    return newDies
+  }
+  // }, [])
   
   function changeDie(){
     setDies(prevDies => {
@@ -37,8 +40,8 @@ function App() {
 
   const dieElements = dies.map(die => {
     return <Die
-              class = {die.fixed? 'die--fix' : ''}
-              key={die.id} 
+              key={die.id}
+              class = {die.fixed? 'die--fix' : ''} 
               value={die.value}
               click={() => fixDie(die.id)} 
             />
@@ -58,6 +61,7 @@ function App() {
       }
     }
     setTenzies(true)
+    setDies(setNewDies())
 
   }, [dies])
 
