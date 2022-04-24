@@ -43,13 +43,50 @@ function App() {
               click={() => fixDie(die.id)} 
             />
   })
+
+  const [tenzies, setTenzies] = React.useState(true)
+  const firstUpdate = React.useRef(true);
+  React.useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    const firstValue = dies[0].value
+    for(let i=1; i<10;++i){
+      if(dies[i].value !== firstValue || !dies[i].fixed || !dies[0].fixed){
+        return
+      }
+    }
+    setTenzies(true)
+
+  }, [dies])
+
+  function toggle(){
+    setTenzies(prevTenzies => !prevTenzies)
+  }
   
   return (
     <main>
-      <div className='die--container'>
-        {dieElements}
-      </div>
-      <button className='roll' onClick={changeDie}>Roll</button>
+      { 
+        !tenzies ?
+        <>
+          <div className='tenzies'>
+            <h1>Tenzies</h1>
+            <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+          </div>
+          <div className='die--container'>
+              {dieElements}
+          </div>
+          <button className='roll' onClick={changeDie}>Roll</button>
+        </>
+        :
+        <div className='tenzies--won'>
+          <h1>Congratulations<br /> You won!</h1>
+          <span className='icon' onClick={toggle}>
+            <i className="fa-solid fa-arrow-rotate-right"></i>
+          </span>
+        </div>
+      }
     </main>
   );
 }

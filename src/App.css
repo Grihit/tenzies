@@ -39,6 +39,17 @@ main{
   width: 3rem;
   height: 3rem;
   cursor: pointer;
+  transition: all .2s;
+}
+
+.die--fix{
+  background-color: #59E391;
+  animation: fadeIn .2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .die--text{
@@ -57,8 +68,40 @@ main{
   border-radius: 3px;
   cursor: pointer;
   color: #FFFFFF;
+  transition: all .5s;
 }
 
-.die--fix{
-  background-color: #59E391;
+.roll:hover{
+  transition: all .5s;
+  background-color: #442dd5;
+}
+
+.tenzies{
+  text-align: center;
+  padding: 0px 45px;
+}
+.tenzies>h1{
+  color: #2B283A;
+  margin-bottom: 0px;
+}
+
+.tenzies>p{
+  color: #4A4E74;
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.tenzies--won{
+  text-align: center;
+  color: #2B283A;
+}
+
+.fa-arrow-rotate-right{
+  font-size: 2rem;
+  color: #5035FF;
+  cursor: pointer;
+  transition: transform .8s ease-in-out;
+}
+.fa-arrow-rotate-right:hover{
+  transform: rotate(270deg);
 }
