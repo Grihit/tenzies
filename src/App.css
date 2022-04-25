@@ -31,15 +31,13 @@ main{
 
 .die{
   background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 3.81277px;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
   transition: all .2s;
+  padding: 8px;
 }
 
 .die--fix{
@@ -52,11 +50,130 @@ main{
   100% {opacity:1;}
 }
 
-.die--text{
+/* .die--text{
   color: #2B283A;
   font-weight: 700;
   font-size: 1.5rem;
+} */
+
+.dot{
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color:black;
 }
+
+.die--face1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.die--face2{
+  display: flex;   
+  justify-content : space-between;
+  height: 100%;
+}
+
+.die--face2 .dot:nth-of-type(2){
+  align-self: flex-end;
+}
+
+.die--face3{
+  display: flex;   
+  justify-content : space-between;
+  height: 100%;
+}
+
+.die--face3 .dot:nth-of-type(2){
+  align-self: center;
+}
+
+.die--face3 .dot:nth-of-type(3){
+  align-self: flex-end;
+}
+
+.die--face4{
+  position: relative;
+  height: 100%;
+}
+
+.die--face4 .dot:nth-of-type(2){
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.die--face4 .dot:nth-of-type(3){
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.die--face4 .dot:nth-of-type(4){
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.die--face5{
+  position: relative;
+  height: 100%;
+}
+
+.die--face6 .dot:nth-of-type(2){
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.die--face6 .dot:nth-of-type(3){
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.die--face6 .dot:nth-of-type(4){
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.die--face6 .dot:nth-of-type(5){
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 3.5px);
+}
+.die--face6 .dot:nth-of-type(6){
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 3.5px);
+}
+
+.die--face6{
+  position: relative;
+  height: 100%;
+}
+.die--face5 .dot:nth-of-type(2){
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.die--face5 .dot:nth-of-type(3){
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.die--face5 .dot:nth-of-type(4){
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.die--face5 .dot:nth-of-type(5){
+  position: absolute;
+  left: calc(50% - 3.5px);
+  top: calc(50% - 3.5px);
+}
+
+
+
 
 .roll{
   margin-top: 25px;

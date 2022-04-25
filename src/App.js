@@ -13,7 +13,7 @@ function App() {
       const newDie =
       {
           id: nanoid(), 
-          value: Math.floor(Math.random()*5 + 1), 
+          value: Math.ceil(Math.random()*6), 
           fixed: false
       }
       newDies[i]=newDie
@@ -25,7 +25,7 @@ function App() {
   function changeDie(){
     setDies(prevDies => {
       return prevDies.map(die => {
-        return !die.fixed ? {...die, value: Math.floor(Math.random()*5 + 1)} : die
+        return !die.fixed ? {...die, value: Math.ceil(Math.random()*6)} : die
       })
     })
   }
