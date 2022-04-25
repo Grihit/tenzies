@@ -6,8 +6,7 @@ import Die from './components/Die'
 function App() {
   
   const [dies, setDies] = React.useState(setNewDies())
-  // React.useEffect(() => {
-    function setNewDies(){
+  function setNewDies(){
     const newDies = [{}]
     for(let i=0;i<10;++i){
       const newDie =
@@ -20,7 +19,6 @@ function App() {
     }
     return newDies
   }
-  // }, [])
   
   function changeDie(){
     setDies(prevDies => {
