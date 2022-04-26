@@ -2,6 +2,7 @@ import React from 'react'
 import { nanoid } from 'nanoid';
 import './App.css';
 import Die from './components/Die'
+import Timer from './components/Timer';
 
 function App() {
   
@@ -72,6 +73,7 @@ function App() {
       { 
         !tenzies ?
         <>
+          <Timer tenzies={tenzies} />
           <div className='tenzies'>
             <h1>Tenzies</h1>
             <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
