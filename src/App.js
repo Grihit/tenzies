@@ -67,13 +67,20 @@ function App() {
   function toggle(){
     setTenzies(prevTenzies => !prevTenzies)
   }
+
+  const [least, setLeast] = React.useState(localStorage.getItem("least"))
+  const [currenTime, setCurrentTime] = React.useState(localStorage.getItem("current"))
+  React.useEffect(()=>{
+    setLeast(localStorage.getItem("least"))
+    setCurrentTime(localStorage.getItem("current"))
+  }, [tenzies])
   
   return (
     <main>
+      <Timer tenzies={tenzies} />
       { 
         !tenzies ?
         <>
-          <Timer tenzies={tenzies} />
           <div className='tenzies'>
             <h1>Tenzies</h1>
             <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
@@ -85,10 +92,12 @@ function App() {
         </>
         :
         <div className='tenzies--won'>
-          <h1>Congratulations<br /> You won!</h1>
+          <h1>Congratulations<br /> <span>You won!</span></h1>
           <span className='icon' onClick={toggle}>
             <i className="fa-solid fa-arrow-rotate-right"></i>
           </span>
+          <h2>Your Personal Best: <span>{least}</span></h2>
+          <h2>Your Current Time: <span>{currenTime}</span></h2>
         </div>
       }
     </main>

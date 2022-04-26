@@ -234,3 +234,11 @@ main{
 .timer span:nth-of-type(1){
   color: #0B2434;
 }
+
+h2>span{
+  color: #442dd5;
+}
+
+h1>span{
+  color: #442dd5;
+}
