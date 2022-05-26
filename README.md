@@ -1,3 +1,14 @@
+# Workflow of the web app
+
+## Landing Page
+![Landing Page](https://github.com/Grihit/tenzies/blob/master/public/images/Landing_Page.PNG?raw=true)
+
+## Playing Game
+![Playing Game](https://github.com/Grihit/tenzies/blob/master/public/images/Choosing_Dice.PNG?raw=true)
+
+## Winning Page
+![Winning Page](https://github.com/Grihit/tenzies/blob/master/public/images/Won.PNG?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
